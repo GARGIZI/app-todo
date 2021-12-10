@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.todo {
+  background: #FAF6E8;
+  position: relative;
+  height: 100vh;
+}
+
+.todo__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 15px 0 15px;
+}
+
+.todo__block {
+  width: 100%;
+  height: 100%;
+  max-height: 190px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo__block-priority {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  font-weight: bold;
+  color: green;
+}
+
+.todo__block-heading p {
+  font-weight: bold;
+  margin-top: 14px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.todo__block-text {
+  max-height: 96px;
+  padding-bottom: 5px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.todo__block-text p {
+  display: none;
+}
+
+.todo__block-text p.active {
+  display: block;
+}
+
+.todo__block-deleteIcon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.btn-add {
+  position: absolute;
+  bottom: 25px;
+  right: 35px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.addBlock {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  -webkit-transition: .4s;
+  transition: .4s;
+  overflow: hidden;
+  height: 70%;
+  width: 80%;
+  background: #fff;
+  padding: 50px;
+}
+
+.addBlock.active {
+  top: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.addBlock__inputHeading input {
+  border: none;
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+}
+
+.addBlock__inputHeading input::-webkit-input-placeholder {
+  font-size: 30px;
+  color: #000;
+  opacity: .4;
+  font-weight: bold;
+}
+
+.addBlock__inputHeading input:-ms-input-placeholder {
+  font-size: 30px;
+  color: #000;
+  opacity: .4;
+  font-weight: bold;
+}
+
+.addBlock__inputHeading input::-ms-input-placeholder {
+  font-size: 30px;
+  color: #000;
+  opacity: .4;
+  font-weight: bold;
+}
+
+.addBlock__inputHeading input::placeholder {
+  font-size: 30px;
+  color: #000;
+  opacity: .4;
+  font-weight: bold;
+}
+
+.addBlock__inputText textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+  padding: 0;
+}
+
+.addBlock__inputText textarea:focus {
+  outline: none;
+}
+
+.btn-completed {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 0;
+  background: #000;
+  height: 100vh;
+  width: 100%;
+  opacity: .2;
+}
+
+.overlay.active {
+  z-index: 10;
+}
+
+.blockInner {
+  position: absolute;
+  background: #fff;
+  top: -100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 70%;
+  width: 80%;
+  padding: 20px 15px 0 15px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.blockInner.active {
+  top: 50%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.blockInner__heading {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.blockInner__text {
+  font-size: 17px;
+}
+/*# sourceMappingURL=style.css.map */

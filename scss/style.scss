@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.todo {
+  background: #FAF6E8;
+  position: relative;
+  height: 100vh;
+
+  &__box {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 15px 0 15px;
+  }
+
+  &__block {
+    width: 100%;
+    height: 100%;
+    max-height: 190px;
+
+    padding: 14px;
+    background: #fff;
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden ;
+
+    &-priority {
+      position: absolute;
+      top: 5px;
+      left: 15px;
+      font-weight: bold;
+
+      color: green;
+    }
+
+    &-heading {
+      p {
+        font-weight: bold;
+        margin-top: 14px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+      }
+    }
+
+    &-text {
+      max-height: 96px;
+      padding-bottom: 5px;
+      word-wrap: break-word;
+      overflow: hidden;
+
+      p {
+        display: none;
+        
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+    &-deleteIcon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translate(0, -50%);
+
+      cursor: pointer;
+      transition: .4s;
+    }
+  }
+}
+
+.btn-add {
+  position: absolute;
+
+  bottom: 25px;
+  right: 35px;
+
+  transition: .4s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.addBlock {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  transition: .4s;
+  overflow: hidden;
+
+  &.active {
+    top: 50%;
+    transition: .4s;
+  }
+
+  height: 70%;
+  width: 80%;
+
+  background: #fff;
+  padding: 50px;
+
+  &__inputHeading {
+    input {
+      border: none;
+      height: 50px;
+      width: 100%;
+
+      font-size: 30px;
+      color: #000;
+      font-weight: bold;
+
+      &::placeholder {
+        font-size: 30px;
+        color: #000;
+        opacity: .4;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__inputText {
+    textarea {
+      width: 100%;
+      height: 100%;
+      resize: none;
+      border: none;
+
+      font-size: 20px;
+      color: #000;
+      font-weight: bold;
+      padding: 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.btn-completed {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 0;
+  background: #000;
+  height: 100vh;
+  width: 100%;
+  opacity: .2;
+
+  &.active {
+    z-index: 10;
+  }
+}
+
+.blockInner {
+  position: absolute;
+  background: #fff;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 70%;
+  width: 80%;
+
+  padding: 20px 15px 0 15px;
+  transition: .4s;
+
+  &.active {
+    top: 50%;
+    transition: .4s;
+  }
+
+  &__heading {
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 17px;
+  }
+}
